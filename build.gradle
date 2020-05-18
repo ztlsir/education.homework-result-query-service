@@ -22,7 +22,14 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
-	implementation 'com.ztlsir:education-homework-api:0.0.1-20200517.154613-1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+
+//	implementation 'com.ztlsir:education-homework-api:0.0.1-20200518.043555-3'
+//	implementation 'com.ztlsir:education-homework-api:0.0.1-20200518.031218-2'
+	implementation 'com.ztlsir:education-homework-api:0.0.1-20200518.050222-4'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

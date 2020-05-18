@@ -1,4 +1,4 @@
-package com.ztlsir.homework.result.query.service;
+package com.ztlsir.homework.result.query;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

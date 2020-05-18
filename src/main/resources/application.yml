@@ -1,0 +1,11 @@
+server:
+  port: 804
+
+spring:
+  application:
+    name: homework-result-query-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:803/eureka/
