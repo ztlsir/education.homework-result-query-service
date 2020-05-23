@@ -1,4 +1,4 @@
-package com.ztlsir.homework.result.query.config;
+package com.ztlsir.homework.result.query.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

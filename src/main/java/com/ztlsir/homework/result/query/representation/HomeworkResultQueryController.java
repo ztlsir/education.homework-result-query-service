@@ -1,6 +1,6 @@
 package com.ztlsir.homework.result.query.representation;
 
-import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
+import com.ztlsir.homework.homework.representation.HomeworkRepresentation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

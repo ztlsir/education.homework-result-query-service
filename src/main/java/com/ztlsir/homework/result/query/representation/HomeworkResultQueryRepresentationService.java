@@ -1,7 +1,7 @@
 package com.ztlsir.homework.result.query.representation;
 
 import com.ztlsir.homework.homework.HomeworkClient;
-import com.ztlsir.homework.homework.Representation.model.HomeworkRepresentation;
+import com.ztlsir.homework.homework.representation.HomeworkRepresentation;
 import org.springframework.stereotype.Component;
 
 @Component
