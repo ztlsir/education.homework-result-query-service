@@ -1,1 +1,1 @@
-./gradlew clean bootRun
+./gradlew clean bootRun -Dspring.profiles.active=default

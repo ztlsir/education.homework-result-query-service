@@ -1,12 +1,4 @@
-server:
-  port: 80
-
 spring:
   cloud:
     config:
       profile: ci
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://eureka.peer1/eureka/,http://eureka.peer2/eureka/,http://eureka.peer3/eureka/
