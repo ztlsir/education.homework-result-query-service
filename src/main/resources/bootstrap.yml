@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: homework-result-query-service
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
 
 eureka:
   client:
