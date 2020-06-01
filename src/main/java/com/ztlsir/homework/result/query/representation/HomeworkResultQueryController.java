@@ -1,6 +1,5 @@
 package com.ztlsir.homework.result.query.representation;
 
-import com.ztlsir.homework.homework.representation.HomeworkRepresentation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +21,7 @@ public class HomeworkResultQueryController {
     }
 
     @GetMapping("/{id}")
-    public HomeworkRepresentation byId(@PathVariable(name = "id") String id) {
+    public HomeworkResultQueryRepresentation byId(@PathVariable(name = "id") String id) {
         return service.byId(id);
     }
 

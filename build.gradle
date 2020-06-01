@@ -23,13 +23,21 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation 'org.springframework.cloud:spring-cloud-bus'
+	implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
 
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'mysql:mysql-connector-java'
+	implementation 'com.google.guava:guava:27.1-jre'
 
 	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 	implementation 'io.springfox:springfox-swagger2:2.9.2'
     implementation 'com.ztlsir:education-homework-api:0.0.1-20200522.104803-6'
+	implementation 'com.ztlsir:education-homework-result-api:0.0.1-20200601.025515-4'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -49,3 +57,6 @@ test {
 bootRun {
 	systemProperties = System.properties
 }
+
+apply from: "${projectDir}/gradle/docker-compose/docker-compose.gradle"
+apply from: "${projectDir}/gradle/version-info.gradle"
