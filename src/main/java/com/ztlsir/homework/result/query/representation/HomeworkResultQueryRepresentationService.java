@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ztlsir.homework.homework.HomeworkClient;
 import com.ztlsir.homework.result.homeworkResult.HomeworkResultClient;
-import com.ztlsir.homework.result.query.representation.event.HomeworkResultCreatedEvent;
+import com.ztlsir.shared.event.homeworkResult.HomeworkResultCreatedEvent;
 import lombok.SneakyThrows;
 import lombok.var;
 import org.springframework.stereotype.Component;

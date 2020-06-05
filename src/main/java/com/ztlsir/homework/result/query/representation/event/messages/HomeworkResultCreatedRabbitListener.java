@@ -1,7 +1,7 @@
 package com.ztlsir.homework.result.query.representation.event.messages;
 
 import com.ztlsir.homework.result.query.representation.HomeworkResultQueryRepresentationService;
-import com.ztlsir.homework.result.query.representation.event.HomeworkResultCreatedEvent;
+import com.ztlsir.shared.event.homeworkResult.HomeworkResultCreatedEvent;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
