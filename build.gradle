@@ -1,8 +1,9 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.0.RELEASE'
+	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'idea'
+	id 'com.avast.gradle.docker-compose' version "0.10.10"
 }
 
 group = 'com.ztlsir'
@@ -26,6 +27,7 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-bus'
 	implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
 
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	compileOnly 'org.projectlombok:lombok:1.18.12'
 	annotationProcessor 'org.projectlombok:lombok:1.18.12'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -36,8 +38,10 @@ dependencies {
 
 	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 	implementation 'io.springfox:springfox-swagger2:2.9.2'
-    implementation 'com.ztlsir:education-homework-api:0.0.1-20200522.104803-6'
-	implementation 'com.ztlsir:education-homework-result-api:0.0.1-20200601.025515-4'
+
+	implementation 'com.ztlsir:education-shared-event:0.0.1-20200605.031946-4'
+	implementation 'com.ztlsir:education-homework-api:0.0.1-20200605.021406-7'
+	implementation 'com.ztlsir:education-homework-result-api:0.0.1-20200605.030235-7'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -56,6 +60,9 @@ test {
 
 bootRun {
 	systemProperties = System.properties
+}
+
+task dockerDown() {
 }
 
 apply from: "${projectDir}/gradle/docker-compose/docker-compose.gradle"

@@ -1,5 +1,6 @@
 package com.ztlsir.homework.result.query.representation;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ztlsir.homework.homework.HomeworkClient;
 import com.ztlsir.homework.result.homeworkResult.HomeworkResultClient;
@@ -27,10 +28,18 @@ public class HomeworkResultQueryRepresentationService {
         this.objectMapper = objectMapper;
     }
 
-    @SneakyThrows
     public HomeworkResultQueryRepresentation byId(String id) {
-        var homeworkResultQueryPO = homeworkResultQueryDao.findById(id).get();
-        return objectMapper.readValue(homeworkResultQueryPO.getJsonContent(), HomeworkResultQueryRepresentation.class);
+        var homeworkResultQueryPO=homeworkResultQueryDao.findById(id);
+        if(!homeworkResultQueryPO.isPresent())
+        {
+            return null;
+        }
+
+        try {
+            return objectMapper.readValue(homeworkResultQueryPO.get().getJsonContent(), HomeworkResultQueryRepresentation.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @SneakyThrows
