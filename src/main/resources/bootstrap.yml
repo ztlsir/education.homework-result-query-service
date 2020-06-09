@@ -10,8 +10,18 @@ spring:
         enabled: true
         service-id: config
       fail-fast: true
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    rabbitmq:
+      queue: sleuth
+    sender:
+      type: rabbit
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:803/eureka/
+  instance:
+    prefer-ip-address: true
